@@ -1,0 +1,120 @@
+$color-primary: #000000;
+$color-muted: #868688;
+$color-border: #b5afaf;
+$color-line: #e5e5e5;
+
+$spacing-header: 30px;
+$spacing-main: 40px;
+
+$icon-size: 96px;
+$letter-spacing: 6px;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: $spacing-header;
+    margin-bottom: $spacing-header;
+  }
+
+  &__title {
+    text-transform: uppercase;
+    letter-spacing: $letter-spacing;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 50px;
+      height: 1px;
+      background-color: $color-primary;
+      margin: 20px auto 0;
+    }
+  }
+
+  &__subtitle {
+    color: $color-muted;
+    text-align: center;
+    line-height: 1.6;
+  }
+
+  &__services {
+    display: flex;
+    gap: $spacing-main;
+  }
+
+  &__card {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex: 1;
+
+    &:not(:last-child)::after {
+      content: "";
+      position: absolute;
+      top: calc($icon-size / 2);
+      left: calc(50% + ($icon-size / 2) + 20px);
+      width: calc(100% - $icon-size);
+      height: 1px;
+      background-color: $color-line;
+    }
+  }
+
+  &__icon {
+    border: $color-border 1px solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: $spacing-header;
+    border-radius: 50%;
+    width: $icon-size;
+    height: $icon-size;
+  }
+
+  &__card-title {
+    text-transform: uppercase;
+    letter-spacing: $letter-spacing;
+  }
+
+  &__icon-img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+
+  @media (width < 768px) {
+    &__services {
+      flex-direction: column;
+    }
+
+    &__card:not(:last-child)::after {
+      display: none;
+    }
+  }
+
+  @media (width < 480px) {
+    &__title,
+    &__card-title {
+      letter-spacing: 3px;
+    }
+  }
+}
