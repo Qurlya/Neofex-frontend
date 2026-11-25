@@ -1,0 +1,36 @@
+main {
+  padding: 120px 120px;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+
+  &__text {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+
+    transform: translateX(-50%);
+    margin-bottom: 8px;
+
+    width: 110px;
+    padding: 10px 12px;
+    border-radius: 6px;
+
+    background-color: #000000;
+    color: #ffffff;
+    text-align: center;
+
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+
+  &:hover &__text,
+  &:focus-visible &__text {
+    opacity: 1;
+    visibility: visible;
+  }
+}

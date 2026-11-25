@@ -1,0 +1,72 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+main {
+  padding: 20px;
+}
+
+.cards {
+  gap: 20px;
+}
+.cards--flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+.cards--flex .card {
+  flex: 1 1 200px;
+}
+.cards--grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+@media (900px <= width < 1120px) {
+  .cards--grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .cards--grid .card:nth-child(5) {
+    grid-column: 1/-1;
+  }
+}
+@media (680px <= width < 900px) {
+  .cards--grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+  .cards--grid .card {
+    grid-column: span 2;
+  }
+  .cards--grid .card:nth-child(4),
+  .cards--grid .card:nth-child(5) {
+    grid-column: span 3;
+  }
+}
+@media (460px <= width < 680px) {
+  .cards--grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .cards--grid .card:nth-child(5) {
+    grid-column: 1/-1;
+  }
+}
+@media (width < 460px) {
+  .cards--grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  padding: 20px;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+}
+.card__title {
+  margin: 0;
+}
+
+/*# sourceMappingURL=style.css.map */
