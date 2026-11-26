@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+    <script type="module" src="script.js"></script>
+</head>
+<body>
+<main class="page">
+  <section class="auth-card" aria-labelledby="form-title">
+    <h1 class="auth-card__title" id="form-title">Contact Information</h1>
+
+    <form class="form" id="contactForm" novalidate>
+      <div class="form__field" data-field="fio">
+        <label class="form__label" for="fioInput">
+          FIO <span class="form__required" aria-hidden="true">*</span>
+        </label>
+        <div class="form__control">
+          <input
+                  class="form__input"
+                  type="text"
+                  id="fioInput"
+                  name="fio"
+                  placeholder="For Example Doe"
+                  autocomplete="name"
+                  required
+                  aria-describedby="fioMessage"
+          >
+          <span class="form__status-icon form__status-icon--error" aria-hidden="true">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <line x1="5" y1="5" x2="11" y2="11"></line>
+              <line x1="11" y1="5" x2="5" y2="11"></line>
+            </svg>
+          </span>
+          <span class="form__status-icon form__status-icon--valid" aria-hidden="true">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="4 8.5 6.5 11 12 5.5"></polyline>
+            </svg>
+          </span>
+        </div>
+        <p class="form__message" id="fioMessage" role="alert"></p>
+      </div>
+
+      <div class="form__field" data-field="password">
+        <label class="form__label" for="passwordInput">
+          Your password <span class="form__required" aria-hidden="true">*</span>
+        </label>
+        <div class="form__control">
+          <input
+                  class="form__input"
+                  type="password"
+                  id="passwordInput"
+                  name="password"
+                  placeholder="Enter the password"
+                  autocomplete="new-password"
+                  required
+                  aria-describedby="passwordMessage passwordRules"
+          >
+          <span class="form__status-icon form__status-icon--error" aria-hidden="true">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <line x1="5" y1="5" x2="11" y2="11"></line>
+              <line x1="11" y1="5" x2="5" y2="11"></line>
+            </svg>
+          </span>
+          <span class="form__status-icon form__status-icon--valid" aria-hidden="true">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="4 8.5 6.5 11 12 5.5"></polyline>
+            </svg>
+          </span>
+        </div>
+
+        <p class="form__message" id="passwordMessage" role="alert"></p>
+      </div>
+
+      <div class="form__footer">
+        <ul class="form__rules" id="passwordRules">
+          <li class="form__rule" data-rule="length">At least 8 characters</li>
+          <li class="form__rule" data-rule="uppercase">Uppercase letter</li>
+          <li class="form__rule" data-rule="digit">Digit</li>
+          <li class="form__rule" data-rule="special">Special character (!@#$%)</li>
+        </ul>
+
+        <button class="form__submit" type="submit" disabled>Continue</button>
+      </div>
+    </form>
+  </section>
+</main>
+</body>
+</html>
