@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Converter currency</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+<main class="page">
+    <section class="rates" aria-labelledby="ratesTitle">
+        <div class="rates__header">
+            <h1 class="rates__title" id="ratesTitle">Exchange rate in internet bank</h1>
+            <time class="rates__updated" id="ratesUpdated">Update every 15 minutes</time>
+        </div>
+        <div class="rates__body">
+            <div class="rates__content">
+                <h2 class="rates__subtitle">Currency</h2>
+                <dl class="rates__list" id="ratesList"></dl>
+                <a class="rates__link" href="#all-courses">All courses</a>
+            </div>
+            <svg class="rates__icon"
+                 viewBox="0 0 64 64"
+                 fill="currentColor"
+                 aria-hidden="true">
+                <polygon points="32 8 6 22 58 22"></polygon>
+                <rect x="10" y="24" width="44" height="4"></rect>
+                <rect x="14" y="30" width="5" height="18"></rect>
+                <rect x="24" y="30" width="5" height="18"></rect>
+                <rect x="35" y="30" width="5" height="18"></rect>
+                <rect x="45" y="30" width="5" height="18"></rect>
+                <rect x="8" y="50" width="48" height="4"></rect>
+                <rect x="4" y="56" width="56" height="4"></rect>
+            </svg>
+        </div>
+    </section>
+</main>
+</body>
+</html>

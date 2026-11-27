@@ -1,0 +1,135 @@
+$color-bg: #f6f4ff;
+$color-card-top: #f2f2f2;
+$color-card-bottom: #d9d9d9;
+$color-text: #1f2430;
+$color-muted: #6e7480;
+$color-link: #ffffff;
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $color-bg;
+  color: $color-text;
+}
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.rates {
+  width: 100%;
+  max-width: 860px;
+  padding: 28px 36px;
+  border-radius: 16px;
+  background: linear-gradient(180deg, $color-card-top 0%, $color-card-bottom 100%);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 20px;
+
+    @media (width < 600px) {
+      flex-direction: column;
+      gap: 6px;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 700;
+  }
+
+  &__updated {
+    font-size: 12px;
+    color: $color-muted;
+  }
+
+  &__body {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 24px;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__subtitle {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 600;
+  }
+
+  &__list {
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(110px, auto));
+    gap: 16px 28px;
+
+    @media (width < 600px) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px 20px;
+    }
+
+    @media (width < 360px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    font-size: 15px;
+  }
+
+  &__code {
+    margin: 0;
+    color: $color-muted;
+    font-weight: 500;
+  }
+
+  &__value {
+    margin: 0;
+    font-weight: 700;
+  }
+
+  &__link {
+    width: fit-content;
+    font-size: 14px;
+    font-weight: 600;
+    color: $color-link;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__icon {
+    width: 96px;
+    height: 96px;
+    flex-shrink: 0;
+
+    @media (width < 600px) {
+      display: none;
+    }
+  }
+
+  @media (width < 600px) {
+    padding: 20px;
+  }
+}
